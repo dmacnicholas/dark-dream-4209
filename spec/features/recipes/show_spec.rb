@@ -25,6 +25,7 @@ RSpec.describe 'recipes show page' do
 
     expect(page).to have_content("Cheese")
     expect(page).to have_content("Dough")
-    expect(page).to_not have_content("Marinara Sauce")
+    expect(page).to have_content("Marinara Sauce")
+    expect(page).to_not have_content("Rice")
   end
 end
