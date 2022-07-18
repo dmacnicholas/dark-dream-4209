@@ -21,7 +21,7 @@ RSpec.describe 'recipes show page' do
     recipe_ingredient_4 = RecipeIngredient.create!(recipe_id: burrito.id, ingredient_id: rice.id)
     recipe_ingredient_5 = RecipeIngredient.create!(recipe_id: cheeseburger.id, ingredient_id: bread.id)
 
-    visit "/recipes/#{{pizza.id}}"
+    visit "/recipes/#{pizza.id}"
 
     expect(page).to have_content("Cheese")
     expect(page).to have_content("Dough")
