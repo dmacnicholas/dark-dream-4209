@@ -2,5 +2,6 @@
 
   <% @recipe.ingredients.each do |recipe| %>
     <p>Name: <%= recipe.name %></p>
-    <p>Total Cost: <%= recipe.total_cost %></p>
     <%end%>
+
+    <p>Total Cost: <%= @recipe.total_cost %></p>
