@@ -24,31 +24,31 @@ RSpec.describe 'ingredients index page' do
 
     visit "/ingredients"
 
-    within "ingredients-#{cheese.id}" do
+    within "#ingredients-#{cheese.id}" do
       expect(page).to have_content("Cheese: 2")
     end
 
-    within "ingredients-#{dough.id}" do
+    within "#ingredients-#{dough.id}" do
       expect(page).to have_content("Dough: 1")
     end
 
-    within "ingredients-#{marinara_sauce.id}" do
+    within "#ingredients-#{marinara_sauce.id}" do
       expect(page).to have_content("Marinara Sauce: 1")
     end
 
-    within "ingredients-#{chicken.id}" do
+    within "#ingredients-#{chicken.id}" do
       expect(page).to have_content("Chicken: 0")
     end
 
-    within "ingredients-#{bread.id}" do
+    within "#ingredients-#{bread.id}" do
       expect(page).to have_content("Bread: 1")
     end
 
-    within "ingredients-#{beef.id}" do
+    within "#ingredients-#{beef.id}" do
       expect(page).to have_content("Beef: 0")
     end
 
-    within "ingredients-#{rice.id}" do
+    within "#ingredients-#{rice.id}" do
       expect(page).to have_content("Rice: 1")
     end
   end
