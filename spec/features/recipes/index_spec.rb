@@ -4,7 +4,7 @@ RSpec.describe 'recipes index page' do
 
   it 'has a list of recipe names with complexity and genre' do
     pizza = Recipe.create!(name: "Pizza", complexity: 4, genre: "Italian")
-    cheeseburger = Recipe.create!(name: "Cheesburger", complexity: 3, genre: "American")
+    cheeseburger = Recipe.create!(name: "Cheeseburger", complexity: 3, genre: "American")
     burrito = Recipe.create!(name: "Burrito", complexity: 5, genre: "Mexican")
 
       visit "/recipes"
@@ -12,7 +12,7 @@ RSpec.describe 'recipes index page' do
       within "#recipes-#{pizza.id}" do
       expect(page).to have_content("Name: Pizza")
       expect(page).to have_content("Complexity: 4")
-      expect(page).to have_content("Genre : Italian")
+      expect(page).to have_content("Genre: Italian")
     end
 
     within "#recipes-#{cheeseburger.id}" do
