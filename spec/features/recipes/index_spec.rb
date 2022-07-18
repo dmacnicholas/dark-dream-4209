@@ -27,4 +27,16 @@ RSpec.describe 'recipes index page' do
       expect(page).to have_content("Genre: Mexican")
     end
   end
+
+  it 'sorts alphabetically' do
+    pizza = Recipe.create!(name: "Pizza", complexity: 4, genre: "Italian")
+    cheeseburger = Recipe.create!(name: "Cheeseburger", complexity: 3, genre: "American")
+    burrito = Recipe.create!(name: "Burrito", complexity: 5, genre: "Mexican")
+
+    visit "/recipes"
+
+    expect(burrito).to appear_before(cheeseburger)
+    expect(cheeseburger).to appear_before(pizza)
+  end
+
 end

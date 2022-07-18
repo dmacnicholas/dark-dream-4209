@@ -52,4 +52,20 @@ RSpec.describe 'ingredients index page' do
       expect(page).to have_content("Rice: 1")
     end
   end
+
+  it 'sorts alphabetically' do
+    cheese = Ingredient.create!(name: "Cheese", cost: 7)
+    dough = Ingredient.create!(name: "Dough", cost: 5)
+    marinara_sauce = Ingredient.create!(name: "Marinara Sauce", cost: 4)
+    chicken = Ingredient.create!(name: "Chicken", cost: 10)
+    bread = Ingredient.create!(name: "Bread", cost: 3)
+    beef = Ingredient.create!(name: "Beef", cost: 12)
+    rice = Ingredient.create!(name: "Rice", cost: 1)
+
+    visit "/ingredients"
+
+    expect(beef).to appear_before(bread)
+    expect(bread).to appear_before(cheese)
+  end
+
 end

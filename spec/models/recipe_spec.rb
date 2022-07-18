@@ -33,4 +33,13 @@ RSpec.describe Recipe, type: :model do
 
     expect(pizza.total_cost).to eq(16)
   end
+
+  it 'sorts alphabetically' do
+    cheese_pizza = Recipe.create!(name: "Cheese Pizza", complexity: 4, genre: "Italian")
+    hamburger = Recipe.create!(name: "Hamburger", complexity: 3, genre: "American")
+    quesadilla = Recipe.create!(name: "Quesadilla", complexity: 5, genre: "Mexican")
+
+    expect(Recipe.alphabetical).to eq([cheese_pizza, hamburger, quesadilla])
+  end
+
 end

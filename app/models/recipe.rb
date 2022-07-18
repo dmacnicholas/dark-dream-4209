@@ -10,4 +10,7 @@ class Recipe < ApplicationRecord
     ingredients.sum(:cost)
   end
 
+  def self.alphabetical
+    order(:name)
+  end
 end

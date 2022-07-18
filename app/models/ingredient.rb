@@ -9,7 +9,7 @@ class Ingredient < ApplicationRecord
     recipes.count
   end
 
-  def self.total_cost
-    sum(:cost)
+  def self.alphabetical
+    order(:name)
   end
 end
