@@ -7,9 +7,9 @@ RSpec.describe 'recipes index page' do
     cheeseburger = Recipe.create!(name: "Cheeseburger", complexity: 3, genre: "American")
     burrito = Recipe.create!(name: "Burrito", complexity: 5, genre: "Mexican")
 
-      visit "/recipes"
+    visit "/recipes"
 
-      within "#recipes-#{pizza.id}" do
+    within "#recipes-#{pizza.id}" do
       expect(page).to have_content("Name: Pizza")
       expect(page).to have_content("Complexity: 4")
       expect(page).to have_content("Genre: Italian")
@@ -35,8 +35,10 @@ RSpec.describe 'recipes index page' do
 
     visit "/recipes"
 
-    expect(burrito).to appear_before(cheeseburger)
-    expect(cheeseburger).to appear_before(pizza)
+    # expect(burrito).to appear_before(cheeseburger)
+    # expect(cheeseburger).to appear_before(pizza)
+    expect(page.text.index(burrito.name) < page.text.index(cheeseburger.name))
+    expect(page.text.index(cheeseburger.name) < page.text.index(pizza.name))
   end
 
 end

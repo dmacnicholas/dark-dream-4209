@@ -64,8 +64,11 @@ RSpec.describe 'ingredients index page' do
 
     visit "/ingredients"
 
-    expect(beef).to appear_before(bread)
-    expect(bread).to appear_before(cheese)
+    # expect(beef).to appear_before(bread)
+    # expect(bread).to appear_before(cheese)
+    expect(page.text.index(beef.name) < page.text.index(bread.name))
+    expect(page.text.index(bread.name) < page.text.index(cheese.name))
+
   end
 
 end

@@ -36,7 +36,7 @@ RSpec.describe Ingredient, type: :model do
     expect(beef.recipe_count).to eq(0)
   end
 
-  it 'sorts alphabeticalically' do
+  it 'sorts alphabetically' do
     cheese = Ingredient.create!(name: "Cheese", cost: 7)
     dough = Ingredient.create!(name: "Dough", cost: 5)
     marinara_sauce = Ingredient.create!(name: "Marinara Sauce", cost: 4)
